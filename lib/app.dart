@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:io';
+import 'package:pdt/home.dart';
+import 'package:pdt/util/customTheme.dart';
 
 class App extends StatefulWidget {
   @override
@@ -11,13 +12,9 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return new MaterialApp(
         title: 'Welcome to PDT',
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('title------'),
-          ),
-          body: Center(
-            child: Text('Hello---->'),
-          ),
+        theme: customThemeData(),
+        home: Home(
+          title: 'home page',
         ));
   }
 }
