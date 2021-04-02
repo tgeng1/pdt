@@ -14,7 +14,7 @@ class _AppState extends State<App> {
         title: 'Welcome to PDT',
         theme: customThemeData(),
         home: Home(
-          title: 'home page',
+          title: '主页',
         ));
   }
 }

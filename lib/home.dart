@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:pdt/util/fileUtil.dart';
 
 class Home extends StatefulWidget {
   final String title;
   @override
-  Home({Key key, @required this.title}) : super(key: key);
+  Home({Key? key, required this.title}) : super(key: key);
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
+  _getTest() async {
+    var FileUtil = new OperateFile();
+    Map json = {'id': 'id1', 'content': []};
+    Map _result = await FileUtil.createDir('test1');
+    print(_result);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,32 +25,8 @@ class _HomeState extends State<Home> {
           ),
         ),
         body: Center(
-            child: Column(
-          children: [
-            Text(
-              'test',
-              style: Theme.of(context).textTheme.headline1,
-            ),
-            RichText(
-              textAlign: TextAlign.center,
-              text: TextSpan(
-                  text: 'hello',
-                  style: Theme.of(context).textTheme.bodyText2,
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: 'text1----->',
-                      style: Theme.of(context).textTheme.bodyText1,
-                    ),
-                    TextSpan(text: 'text2---->'),
-                  ]),
-            ),
-            IconButton(
-                icon: Icon(Icons.add),
-                onPressed: () => ({
-                      print('------->'),
-                      print(Theme.of(context).textTheme.bodyText1)
-                    }))
-          ],
-        )));
+          child:
+              IconButton(icon: Icon(Icons.add), onPressed: () => {_getTest()}),
+        ));
   }
 }

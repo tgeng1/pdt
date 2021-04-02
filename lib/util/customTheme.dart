@@ -20,6 +20,10 @@ ThemeData customThemeData() {
             color: Colors.black,
             fontSize: 24.0,
           ),
-          bodyText2: TextStyle(color: primaryColor)));
+          bodyText2: TextStyle(color: primaryColor)),
+      inputDecorationTheme: InputDecorationTheme(
+          labelStyle: TextStyle(color: Colors.blue),
+          fillColor: Colors.grey,
+          filled: true));
   return initThemeData;
 }
